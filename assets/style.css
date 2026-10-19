@@ -1,0 +1,577 @@
+/* ============================================================
+   OS LAB · hoja de estilo personalizada
+   Estilo retro pastel (finales de los 70 / principios de los 80):
+   fondo crema, colores calidos suaves, bordes redondeados y
+   sombras duras tipo pegatina. Solo fuentes del sistema.
+   ============================================================ */
+
+:root {
+  --os-terracota: #e38b66;
+  --os-melocoton: #f6b48c;
+  --os-rosa: #e8a0a0;
+  --os-rosa-palo: #eac4d5;
+  --os-mantequilla: #f5dfa4;
+  --os-salvia: #b6d7a8;
+  --os-celeste: #9ec5e0;
+  --os-lavanda: #c3aed6;
+
+  --os-texto: #3e2f28;
+  --os-suave: #8a7568;
+  --os-borde: #e4d6bf;
+  --os-fondo: #fbf3e4;
+  --os-papel: #fffdf8;
+  --os-sombra: 3px 3px 0 rgba(62, 47, 40, 0.16);
+  --os-sombra-fuerte: 4px 4px 0 rgba(62, 47, 40, 0.22);
+
+  --os-fuente: "Trebuchet MS", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --os-mono: "IBM Plex Mono", "DejaVu Sans Mono", "Courier New", monospace;
+}
+
+html,
+body,
+[class*="css"] {
+  font-family: var(--os-fuente);
+}
+
+.stApp {
+  background-color: var(--os-fondo);
+  background-image: radial-gradient(
+    rgba(227, 139, 102, 0.08) 1px,
+    transparent 1px
+  );
+  background-size: 22px 22px;
+  color: var(--os-texto);
+}
+
+/* ---------- barra lateral oculta ---------- */
+[data-testid="stSidebar"],
+[data-testid="stSidebarCollapsedControl"],
+[data-testid="collapsedControl"] {
+  display: none;
+}
+
+/* ---------- encabezado superior ---------- */
+.oslab-encabezado {
+  padding: 6px 0 2px;
+}
+
+.oslab-logo {
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--os-terracota);
+  text-shadow: 2px 2px 0 var(--os-mantequilla);
+  line-height: 1.1;
+}
+
+.oslab-sublogo {
+  font-size: 13px;
+  letter-spacing: 0.6px;
+  color: var(--os-suave);
+  margin-bottom: 10px;
+}
+
+.oslab-separador {
+  height: 3px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--os-terracota) 0 18px,
+    var(--os-mantequilla) 18px 36px,
+    var(--os-salvia) 36px 54px,
+    var(--os-celeste) 54px 72px
+  );
+  border-radius: 3px;
+  margin: 10px 0 6px;
+}
+
+.oslab-pie {
+  margin-top: 18px;
+  font-size: 12px;
+  color: var(--os-suave);
+  border-top: 2px dashed var(--os-borde);
+  padding-top: 10px;
+}
+
+.oslab-seccion {
+  margin-top: 14px;
+  margin-bottom: 6px;
+  font-size: 12.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--os-terracota);
+}
+
+/* ---------- encabezados ---------- */
+h1,
+h2,
+h3 {
+  color: var(--os-texto);
+  font-family: var(--os-fuente);
+  letter-spacing: 0.4px;
+}
+
+/* ---------- franja compacta de indicadores ---------- */
+.oslab-franja {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 6px 0 10px;
+}
+
+.oslab-franja-item {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 7px;
+  background: var(--os-papel);
+  border: 2px solid var(--os-borde);
+  border-radius: 999px;
+  padding: 5px 15px;
+  box-shadow: var(--os-sombra);
+}
+
+.oslab-franja-valor {
+  font-family: var(--os-mono);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--os-terracota);
+}
+
+.oslab-franja-etiqueta {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--os-suave);
+}
+
+/* ---------- tarjetas KPI (metricas) ---------- */
+.oslab-kpi {
+  background: var(--os-papel);
+  border: 2px solid var(--os-borde);
+  border-radius: 14px;
+  padding: 10px 14px;
+  box-shadow: var(--os-sombra);
+  min-height: 68px;
+}
+
+.oslab-kpi-valor {
+  font-family: var(--os-mono);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--os-texto);
+  line-height: 1.15;
+}
+
+.oslab-kpi-etiqueta {
+  font-size: 12px;
+  color: var(--os-suave);
+  margin-top: 3px;
+}
+
+/* ---------- tarjetas simples ---------- */
+.oslab-card {
+  background: var(--os-papel);
+  border: 2px solid var(--os-borde);
+  border-radius: 14px;
+  padding: 14px 16px;
+  box-shadow: var(--os-sombra);
+}
+
+.oslab-card-titulo {
+  font-weight: 800;
+  font-size: 15px;
+  margin-bottom: 6px;
+  color: var(--os-terracota);
+}
+
+.oslab-card-texto {
+  font-size: 13px;
+  color: var(--os-suave);
+  line-height: 1.45;
+}
+
+/* ---------- paneles de estados ---------- */
+.oslab-panel {
+  background: var(--os-papel);
+  border: 2px solid var(--os-borde);
+  border-radius: 14px;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+  box-shadow: var(--os-sombra);
+}
+
+.oslab-panel-titulo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--os-suave);
+  border-left: 5px solid var(--os-terracota);
+  padding-left: 9px;
+  margin-bottom: 9px;
+}
+
+.oslab-panel[data-acento="bloqueado"] .oslab-panel-titulo {
+  border-left-color: var(--os-rosa);
+}
+.oslab-panel[data-acento="terminado"] .oslab-panel-titulo {
+  border-left-color: var(--os-salvia);
+}
+.oslab-panel[data-acento="cola"] .oslab-panel-titulo {
+  border-left-color: var(--os-lavanda);
+}
+
+.oslab-panel-contador {
+  background: var(--os-mantequilla);
+  border-radius: 999px;
+  padding: 1px 10px;
+  font-family: var(--os-mono);
+  font-size: 12px;
+  color: var(--os-texto);
+}
+
+.oslab-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.oslab-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #ffffff;
+  border: 1.5px solid var(--os-borde);
+  border-left: 5px solid var(--os-terracota);
+  border-radius: 8px;
+  padding: 4px 9px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--os-texto);
+}
+
+.oslab-chip-vacio {
+  border-left-color: var(--os-borde);
+  color: var(--os-suave);
+  font-weight: 400;
+}
+
+.oslab-chip-restante {
+  background: var(--os-mantequilla);
+  border-radius: 5px;
+  padding: 0 6px;
+  font-family: var(--os-mono);
+  font-size: 11.5px;
+  color: var(--os-texto);
+}
+
+.oslab-flecha {
+  font-family: var(--os-mono);
+  font-size: 11px;
+  color: var(--os-suave);
+}
+
+/* ---------- indicador de CPU ---------- */
+.oslab-cpu {
+  background: var(--os-papel);
+  border: 2px solid var(--os-borde);
+  border-radius: 12px;
+  padding: 11px 14px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  border-left: 6px solid var(--os-terracota);
+  box-shadow: var(--os-sombra);
+}
+
+.oslab-cpu-idle {
+  border-left-color: var(--os-borde);
+  color: var(--os-suave);
+  background: var(--os-fondo);
+}
+
+/* ---------- notas explicativas ---------- */
+.oslab-nota {
+  background: #fdf6e3;
+  border: 2px dashed var(--os-melocoton);
+  border-radius: 12px;
+  padding: 12px 15px;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #5a463a;
+  margin-top: 10px;
+}
+
+/* ---------- botones ---------- */
+.stButton > button {
+  border-radius: 12px;
+  border: 2px solid var(--os-texto);
+  font-weight: 700;
+  font-size: 13.5px;
+  height: 2.6em;
+  background: var(--os-mantequilla);
+  color: var(--os-texto);
+  box-shadow: var(--os-sombra);
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+}
+
+.stButton > button:hover {
+  background: var(--os-melocoton);
+  color: var(--os-texto);
+  border-color: var(--os-texto);
+  transform: translate(-1px, -1px);
+  box-shadow: var(--os-sombra-fuerte);
+}
+
+.stButton > button:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 rgba(62, 47, 40, 0.22);
+}
+
+.stButton > button[kind="primary"] {
+  background: var(--os-terracota);
+  border-color: var(--os-texto);
+  color: #ffffff;
+}
+
+.stButton > button[kind="primary"]:hover {
+  background: #d97a52;
+  color: #ffffff;
+}
+
+/* ---------- tablas ---------- */
+[data-testid="stDataFrame"] {
+  border: 2px solid var(--os-borde);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--os-sombra);
+}
+
+/* ---------- tabs ---------- */
+[data-baseweb="tab"] {
+  font-weight: 700;
+}
+
+[data-baseweb="tab-list"] {
+  border-bottom: 2px solid var(--os-borde);
+}
+
+/* ---------- control segmentado (navegacion superior) ---------- */
+[data-testid="stButtonGroup"] button {
+  border-radius: 12px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+}
+
+[data-testid="stButtonGroup"] button[aria-checked="true"] {
+  background: var(--os-terracota);
+  color: #ffffff;
+}
+
+/* ---------- desplegables / expanders ---------- */
+[data-testid="stExpander"] {
+  border: 2px solid var(--os-borde);
+  border-radius: 14px;
+  background: var(--os-papel);
+  box-shadow: var(--os-sombra);
+}
+
+/* ---------- grafico ---------- */
+.js-plotly-plot .plotly .mainlayer {
+  font-family: var(--os-fuente);
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 900px) {
+  .oslab-kpi-valor {
+    font-size: 19px;
+  }
+  .oslab-logo {
+    font-size: 25px;
+  }
+  .oslab-franja-valor {
+    font-size: 14px;
+  }
+}
+
+/* ============================================================
+   Concurrencia · actores, semaforos y recursos
+   ============================================================ */
+.oslab-actores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.oslab-actor {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  background: var(--os-papel);
+  border: 2px solid var(--os-borde);
+  border-left: 5px solid var(--os-terracota);
+  border-radius: 12px;
+  padding: 7px 11px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--os-texto);
+  min-width: 150px;
+  box-shadow: var(--os-sombra);
+}
+
+.oslab-actor[data-estado="Ejecutando"] {
+  border-left-color: var(--os-salvia);
+  background: #eef7e9;
+}
+
+.oslab-actor[data-estado="Bloqueado"] {
+  border-left-color: var(--os-rosa);
+  background: #fbeeee;
+}
+
+.oslab-actor[data-estado="Terminado"] {
+  border-left-color: #c9bda9;
+  opacity: 0.66;
+}
+
+.oslab-actor-rol {
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--os-suave);
+}
+
+.oslab-actor-accion {
+  font-size: 11.5px;
+  font-weight: 400;
+  color: var(--os-suave);
+}
+
+.oslab-recurso {
+  background: var(--os-papel);
+  border: 2px solid var(--os-borde);
+  border-radius: 14px;
+  padding: 14px 16px;
+  box-shadow: var(--os-sombra);
+}
+
+.oslab-recurso-titulo {
+  font-size: 12.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--os-terracota);
+  margin-bottom: 10px;
+}
+
+.oslab-celdas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.oslab-celda {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 44px;
+  border-radius: 10px;
+  border: 2px dashed var(--os-borde);
+  background: var(--os-fondo);
+  font-family: var(--os-mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--os-suave);
+}
+
+.oslab-celda[data-lleno="1"] {
+  border: 2px solid var(--os-terracota);
+  border-style: solid;
+  background: #fdeee4;
+  color: var(--os-texto);
+}
+
+.oslab-recurso-fila {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+  font-size: 13px;
+}
+
+.oslab-badge-estado {
+  border-radius: 999px;
+  padding: 2px 12px;
+  font-size: 12.5px;
+  font-weight: 800;
+  border: 2px solid transparent;
+}
+
+.oslab-badge-estado[data-estado="curso"] {
+  background: #e7f0f8;
+  border-color: var(--os-celeste);
+  color: #3d6b8e;
+}
+
+.oslab-badge-estado[data-estado="fin"] {
+  background: #eef7e9;
+  border-color: var(--os-salvia);
+  color: #4c7a3c;
+}
+
+.oslab-badge-estado[data-estado="bloqueo"] {
+  background: #fbeeee;
+  border-color: var(--os-rosa);
+  color: #a33f3f;
+}
+
+.oslab-mesa {
+  display: flex;
+  gap: 26px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.oslab-comensal {
+  background: var(--os-papel);
+  border: 2px solid var(--os-borde);
+  border-radius: 12px;
+  padding: 8px 10px;
+  min-width: 128px;
+  text-align: center;
+  box-shadow: var(--os-sombra);
+}
+
+.oslab-comensal[data-comiendo="1"] {
+  border-color: var(--os-salvia);
+  background: #eef7e9;
+}
+
+.oslab-tenedor {
+  display: inline-block;
+  margin: 3px;
+  padding: 2px 9px;
+  border-radius: 8px;
+  font-size: 11.5px;
+  font-weight: 700;
+  border: 1.5px solid transparent;
+}
+
+.oslab-tenedor[data-libre="1"] {
+  background: #eef7e9;
+  border-color: var(--os-salvia);
+  color: #4c7a3c;
+}
+
+.oslab-tenedor[data-libre="0"] {
+  background: #fbeeee;
+  border-color: var(--os-rosa);
+  color: #a33f3f;
+}

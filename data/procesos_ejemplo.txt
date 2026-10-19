@@ -1,0 +1,9 @@
+# OS LAB - procesos de ejemplo
+# Formato: PID,Llegada,Rafaga,Prioridad[,RafagaES]
+# Cabecera opcional
+PID,Llegada,Rafaga,Prioridad
+1,0,8,2
+2,1,4,1
+3,2,9,3
+4,3,5,2
+5,6,3,1
